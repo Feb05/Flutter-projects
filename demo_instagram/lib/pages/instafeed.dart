@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
 
 class Instagramfeed extends StatelessWidget {
   const Instagramfeed({super.key});
 
-  final List<Map<String, String>> feedData =const
+  final List<Map<String,String>> feedData=const
   [
   {
   "name":"Tom",

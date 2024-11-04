@@ -1,4 +1,5 @@
 import 'package:demo_instagram/pages/instafeed.dart';
+import 'package:demo_instagram/pages/menu.dart';
 import 'package:flutter/material.dart';
 
 void main()
@@ -13,11 +14,7 @@ class Insta extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar( title: Text("Instagram"),
-        backgroundColor: Colors.pinkAccent),
-        body: Instagramfeed(),
-      ),
+      home: Mymenu(),
     );
   }
 }
