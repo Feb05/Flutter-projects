@@ -3,27 +3,34 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
 
+  TextEditingController username=TextEditingController();
+  TextEditingController password=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
         child: Column(
-
           children: [
             CircleAvatar(
               radius: 50,
               backgroundImage: NetworkImage("https://th.bing.com/th/id/OIP.Gfp0lwE6h7139625a-r3aAHaHa?rs=1&pid=ImgDetMain"),
             ),
-            TextField(decoration: InputDecoration(
+            SizedBox(height: 20,),
+            TextField(
+              controller: username,
+              decoration: InputDecoration(
                 hintText: "Username",
                 prefixIcon: Icon(Icons.account_box_rounded),
                 border: OutlineInputBorder()
             ),),
             SizedBox(height: 20,),
-            TextField(decoration: InputDecoration(
+            TextField(
+              obscureText: true,
+              controller: password,
+              decoration: InputDecoration(
                 hintText: "Password",
                 prefixIcon: Icon(Icons.password),
                 border: OutlineInputBorder()
@@ -33,7 +40,15 @@ class LoginPage extends StatelessWidget {
               height: 50,
               width: 150,
               child: ElevatedButton(onPressed: (){
-                print("Hello");
+                String getusername = username.text;
+                String getpassword = password.text;
+                if(getpassword=="" || getpassword=="")
+                  print("All fields are mandatory");
+                else
+                  {
+                    print(getusername);
+                    print(getpassword);
+                  }
               },
                 child: Text("LOGIN"),
                 style: ElevatedButton.styleFrom(

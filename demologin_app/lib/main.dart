@@ -18,7 +18,11 @@ class Login extends StatelessWidget {
         appBar: AppBar(
           title: Text("Login Page")
         ),
-        body: LoginPage(),
+        body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: LoginPage(),
+            ))
       ),
     );
   }
